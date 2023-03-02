@@ -1,0 +1,41 @@
+make testSpajor: run the acceptance tests.
+
+make testPoint : run the simple test for point class.
+
+make testSegment : run the simple test for segment class.
+
+make testJordanCurve : run the simple test for Jordan_Curve class.
+
+make testAtom : run the simple test for Atom_Spajor class.
+
+make testPasting: run the simple test for Spajor class and pasting function.
+
+make design : complile latex file for design document.
+
+make answer : complile latex file for pictures of test result.
+
+
+-----------------------------------------------------------------------
+
+
+testPoint.cpp : test the fundamental assignment operation of Point.
+
+testSegment.cpp : test the slope, position, and angle judgement of Segment.
+
+testJordanCurve.cpp : test the intersect,include judegement of Jordan_Curve and
+                      the function that returns the intersection of Jordan_Curves.
+
+testAtomSpajor.cpp : test the function which judges whether a segment is in the
+                     interior of a Atom_Spajor.
+
+testPasting.cpp : test the pasting function in the condition that the pasting function
+                  has to deal with S2R-c condition, i.e. after S2R-b it is not a
+                  Jordan Curve.
+
+testSpajor.cpp : Acceptance tests, output the complement of panda, meet of panda and
+                 mickey and the join of panda and mickey to the Result directory.
+
+More details of tests is in the answer.pdf.
+
+
+                 

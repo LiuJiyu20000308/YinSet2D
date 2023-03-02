@@ -1,0 +1,46 @@
+#ifndef AtomSpajor_h
+#define AtomSpajor_h
+
+#include "Jordan_Curve.h"
+
+template<int _Dim>
+class Spajor{
+public:
+  enum{Dim=_Dim};
+  using iSegment = Segment<Dim>;
+  using iPoint = Point<double,Dim>;
+  using JCurve = Jordan_Curve<Dim>;
+
+protected:
+  std::vector<JCurve> Curve;
+  
+public:
+  
+  Spajor() = default;
+  Spajor(std::vector<JCurve> iCurve):Curve{iCurve}{ };
+
+  Spajor<Dim> &operator=(const Spajor<Dim> A){
+    Curve = A.Curve;
+  }
+  
+  virtual ~Spajor()=default;
+
+  
+  std::vector<JCurve> &curve(){ return Curve;};
+  const std::vector<JCurve> &curve() const{ return Curve;};
+  void SetCurve(std::vector<JCurve> curve){ Curve = curve;};
+  
+  //print for test
+  
+  friend std::ostream &operator<<(std::ostream &os, const Spajor<Dim> &ASpajor){
+    for(auto i=ASpajor.curve().begin();i!=ASpajor.curve().end();i++){
+      os<<*i<<std::endl;
+    }
+    return os;
+  }
+
+};
+
+
+
+#endif
